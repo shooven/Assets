@@ -1,0 +1,19 @@
+[Adblock Plus 2.0]
+! Version: 20230517
+! Title: shooven Personal List
+! 
+! -----------------------General advert blocking filters-----------------------!
+! 
+outlook.live.com##.GssDD
+outlook.live.com##.Soq5F
+
+mail.qq.com##.recentPanel
+mail.qq.com###folder_tag_td
+mail.qq.com##.ftn_sidebar_ad
+mail.qq.com###folder_invoice_td
+mail.qq.com##img#icon_pop.fd_on
+mail.qq.com##img#icon_pop.fd_off
+mail.qq.com###folder_personal_td
+mail.qq.com##li#folder_starred_td
+mail.qq.com##.pc-plugin-ad-wrapper
+mail.qq.com##li#folder_morefunction_td
