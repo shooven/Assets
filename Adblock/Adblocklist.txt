@@ -7,8 +7,10 @@
 outlook.live.com##.GssDD
 outlook.live.com##.Soq5F
 
+mail.qq.com###vipBuyBtn
 mail.qq.com##.recentPanel
 mail.qq.com###folder_tag_td
+mail.qq.com###vipAdvertising
 mail.qq.com##.ftn_sidebar_ad
 mail.qq.com###folder_invoice_td
 mail.qq.com##img#icon_pop.fd_on
