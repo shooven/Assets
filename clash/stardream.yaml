@@ -53,7 +53,7 @@ tun:
   mtu: 1500
   enable: false
 proxies:
-- name: 剩余流量：165.33 GB
+- name: 剩余流量：163.56 GB
   type: ss
   server: img01.ichigoproduction.moe
   port: 44001
@@ -508,6 +508,13 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt
     path: ./ruleset/applications.yaml
+  direct:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
+    path: ./ruleset/direct.yaml
   chatgpt:
     type: http
     format: yaml
@@ -545,6 +552,7 @@ rule-providers:
     path: ./ruleset/gfw.yaml
 rules:
 - RULE-SET,applications,全局直连
+- RULE-SET,direct,全局直连
 - RULE-SET,chatgpt,节点选择
 - RULE-SET,netflix,节点选择
 - RULE-SET,disneyplus,节点选择
