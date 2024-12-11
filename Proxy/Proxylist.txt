@@ -1,5 +1,0 @@
-*.tw
-*.in
-||openai.com
-||bing.com
-||copilot.microsoft.com
