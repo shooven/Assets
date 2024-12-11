@@ -1,13 +1,6 @@
-# NAME: OpenAI
-# AUTHOR: blackmatrix7
+# NAME: OpenAI & Copilot
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2024-07-03 16:18:28
-# DOMAIN: 8
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 24
-# IP-ASN: 1
-# IP-CIDR: 2
-# TOTAL: 36
 DOMAIN,browser-intake-datadoghq.com
 DOMAIN,chat.openai.com.cdn.cloudflare.net
 DOMAIN,gemini.google.com
@@ -44,16 +37,6 @@ DOMAIN-KEYWORD,openai
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 IP-ASN,20473,no-resolve
-# NAME: Copilot
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:18:30
-# DOMAIN: 20
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 26
-# IP-ASN: 2
-# IP-CIDR: 2
-# TOTAL: 51
 DOMAIN,api.msn.com
 DOMAIN,api.statsig.com
 DOMAIN,assets.msn.com
@@ -105,16 +88,6 @@ IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 IP-ASN,14061,no-resolve
 IP-ASN,20473,no-resolve
-# NAME: Copilot
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:18:30
-# DOMAIN: 20
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 26
-# IP-ASN: 2
-# IP-CIDR: 2
-# TOTAL: 51
 DOMAIN,api.msn.com
 DOMAIN,api.statsig.com
 DOMAIN,assets.msn.com
