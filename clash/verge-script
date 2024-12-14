@@ -84,19 +84,25 @@ const ruleProviders = {
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt",
     "path": "./ruleset/gfw.yaml"
   },
+	"crack": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://raw.githubusercontent.com/shooven/cdn/main/clash/crack.txt",
+    "path": "./ruleset/gfw.yaml"
+  },
 };
 // 规则
 const rules = [
   // 自定义规则
-  "RULE-SET,applications,全局直连",
   "RULE-SET,chatgpt,节点选择",
   "RULE-SET,netflix,节点选择",
   "RULE-SET,disneyplus,节点选择",
   "RULE-SET,tiktok,节点选择",
   "RULE-SET,gfw,节点选择",
+	"RULE-SET,crack,全局直连",
   // 其他规则
-  "GEOIP,LAN,全局直连,no-resolve",
-  "GEOIP,CN,全局直连,no-resolve",
+  "GEOIP,LAN,全局直连",
+  "GEOIP,CN,全局直连",
   "MATCH,漏网之鱼"
 ];
 // 代理组通用配置
@@ -128,23 +134,25 @@ function main(config) {
       "name": "节点选择",
       "type": "select",
       "proxies": ["延迟选优", "故障转移"],
-      "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/adjust.svg"
+      "include-all": false,
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/adjust.svg"
     },
     {
       ...groupBaseOption,
       "name": "延迟选优",
       "type": "url-test",
-      "tolerance": 100,
+			"url": "https://www.gstatic.com/generate_204",
+			"tolerance": 100,
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/speed.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/speed.svg"
     },
     {
-      ...groupBaseOption,
+    ...groupBaseOption,
       "name": "故障转移",
       "type": "fallback",
+			"url": "https://www.gstatic.com/generate_204",
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/ambulance.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/ambulance.svg"
     },
     {
       ...groupBaseOption,
@@ -152,7 +160,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/chatgpt.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/chatgpt.svg"
     },
 	{
       ...groupBaseOption,
@@ -160,7 +168,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/netflix.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/netflix.svg"
     },
 	{
       ...groupBaseOption,
@@ -168,7 +176,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/disney_plus.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/disneyplus.svg"
     },
 	{
       ...groupBaseOption,
@@ -176,7 +184,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/tiktok.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/tiktok.svg"
     },
     {
       ...groupBaseOption,
@@ -184,7 +192,7 @@ function main(config) {
       "type": "select",
       "proxies": ["DIRECT", "节点选择", "延迟选优", "故障转移"],
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/link.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/link.svg"
     },
 	{
       ...groupBaseOption,
@@ -192,7 +200,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
       "include-all": true,
-      "icon": "https://cdn.drugmeta.com/clash/icon/fish.svg"
+      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/fish.svg"
     }
   ];
 
