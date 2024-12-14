@@ -54,6 +54,12 @@ const ruleProviders = {
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt",
     "path": "./ruleset/applications.yaml"
   },
+	"cncidr": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt",
+    "path": "./ruleset/cncidr.yaml"
+  },
   "chatgpt": {
     ...ruleProviderCommon,
     "behavior": "classical",
@@ -94,6 +100,8 @@ const ruleProviders = {
 // 规则
 const rules = [
   // 自定义规则
+	"RULE-SET,applications,全局直连",
+	"RULE-SET,cncidr,全局直连",
   "RULE-SET,chatgpt,节点选择",
   "RULE-SET,netflix,节点选择",
   "RULE-SET,disneyplus,节点选择",
