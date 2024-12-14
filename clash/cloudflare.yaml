@@ -4,6 +4,7 @@ allow-lan: false
 log-level: info
 external-controller: 127.0.0.1:9097
 secret: ''
+global-client-fingerprint: chrome
 tun:
   stack: gvisor
   device: Mihomo
@@ -14,8 +15,8 @@ tun:
   - any:53
   mtu: 1500
   enable: false
-unified-delay: true
-global-client-fingerprint: chrome
+profile:
+  store-selected: true
 dns:
   enable: true
   listen: 0.0.0.0:1053
@@ -43,10 +44,10 @@ dns:
   - https://1.1.1.1/dns-query
   - https://doh.opendns.com/dns-query
   proxy-server-nameserver:
-  - https://1.1.1.1/dns-query
-  - https://doh.opendns.com/dns-query
   - https://223.5.5.5/dns-query
   - https://doh.pub/dns-query
+  - https://1.1.1.1/dns-query
+  - https://doh.opendns.com/dns-query
   nameserver-policy:
     geosite:cn,geolocation-cn:
     - https://223.5.5.5/dns-query
@@ -54,6 +55,7 @@ dns:
     geosite:google,youtube,telegram,gfw,geolocation-!cn:
     - https://1.1.1.1/dns-query
     - https://doh.opendns.com/dns-query
+unified-delay: true
 proxies:
 - name: CF_V1_www.visa.com_80
   type: vless
@@ -66,7 +68,7 @@ proxies:
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V2_cis.visa.com_8080
   type: vless
   server: cis.visa.com
@@ -78,7 +80,7 @@ proxies:
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V3_africa.visa.com_8880
   type: vless
   server: africa.visa.com
@@ -90,7 +92,7 @@ proxies:
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V4_www.visa.com.sg_2052
   type: vless
   server: www.visa.com.sg
@@ -102,7 +104,7 @@ proxies:
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V5_www.visaeurope.at_2082
   type: vless
   server: www.visaeurope.at
@@ -114,7 +116,7 @@ proxies:
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V6_www.visa.com.mt_2086
   type: vless
   server: www.visa.com.mt
@@ -126,7 +128,7 @@ proxies:
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V7_qa.visamiddleeast.com_2095
   type: vless
   server: qa.visamiddleeast.com
@@ -135,11 +137,11 @@ proxies:
   udp: false
   tls: false
   network: ws
-  servername: vpn.drugmeta.com
+  servername: tizo.tzimg.workers.dev
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V8_usa.visa.com_443
   type: vless
   server: usa.visa.com
@@ -148,11 +150,11 @@ proxies:
   udp: false
   tls: true
   network: ws
-  servername: vpn.drugmeta.com
+  servername: tizo.tzimg.workers.dev
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V9_myanmar.visa.com_8443
   type: vless
   server: myanmar.visa.com
@@ -161,11 +163,11 @@ proxies:
   udp: false
   tls: true
   network: ws
-  servername: vpn.drugmeta.com
+  servername: tizo.tzimg.workers.dev
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V10_www.visa.com.tw_2053
   type: vless
   server: www.visa.com.tw
@@ -174,11 +176,11 @@ proxies:
   udp: false
   tls: true
   network: ws
-  servername: vpn.drugmeta.com
+  servername: tizo.tzimg.workers.dev
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V11_www.visaeurope.ch_2083
   type: vless
   server: www.visaeurope.ch
@@ -187,11 +189,11 @@ proxies:
   udp: false
   tls: true
   network: ws
-  servername: vpn.drugmeta.com
+  servername: tizo.tzimg.workers.dev
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V12_www.visa.com.br_2087
   type: vless
   server: www.visa.com.br
@@ -200,11 +202,11 @@ proxies:
   udp: false
   tls: true
   network: ws
-  servername: vpn.drugmeta.com
+  servername: tizo.tzimg.workers.dev
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 - name: CF_V13_www.visasoutheasteurope.com_2096
   type: vless
   server: www.visasoutheasteurope.com
@@ -213,11 +215,11 @@ proxies:
   udp: false
   tls: true
   network: ws
-  servername: vpn.drugmeta.com
+  servername: tizo.tzimg.workers.dev
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: vpn.drugmeta.com
+      Host: tizo.tzimg.workers.dev
 proxy-groups:
 - interval: 300
   timeout: 3000
@@ -230,11 +232,11 @@ proxy-groups:
   proxies:
   - 延迟选优
   - 故障转移
-  include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/adjust.svg
+  include-all: false
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/adjust.svg
 - interval: 300
   timeout: 3000
-  url: https://www.google.com/generate_204
+  url: https://www.gstatic.com/generate_204
   lazy: true
   max-failed-times: 3
   hidden: false
@@ -242,17 +244,17 @@ proxy-groups:
   type: url-test
   tolerance: 100
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/speed.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/speed.svg
 - interval: 300
   timeout: 3000
-  url: https://www.google.com/generate_204
+  url: https://www.gstatic.com/generate_204
   lazy: true
   max-failed-times: 3
   hidden: false
   name: 故障转移
   type: fallback
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/ambulance.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/ambulance.svg
 - interval: 300
   timeout: 3000
   url: https://www.google.com/generate_204
@@ -267,7 +269,7 @@ proxy-groups:
   - 故障转移
   - 全局直连
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/chatgpt.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/chatgpt.svg
 - interval: 300
   timeout: 3000
   url: https://www.google.com/generate_204
@@ -282,7 +284,7 @@ proxy-groups:
   - 故障转移
   - 全局直连
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/netflix.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/netflix.svg
 - interval: 300
   timeout: 3000
   url: https://www.google.com/generate_204
@@ -297,7 +299,7 @@ proxy-groups:
   - 故障转移
   - 全局直连
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/disneyplus.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/disneyplus.svg
 - interval: 300
   timeout: 3000
   url: https://www.google.com/generate_204
@@ -312,7 +314,7 @@ proxy-groups:
   - 故障转移
   - 全局直连
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/tiktok.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/tiktok.svg
 - interval: 300
   timeout: 3000
   url: https://www.google.com/generate_204
@@ -327,7 +329,7 @@ proxy-groups:
   - 延迟选优
   - 故障转移
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/link.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/link.svg
 - interval: 300
   timeout: 3000
   url: https://www.google.com/generate_204
@@ -342,7 +344,7 @@ proxy-groups:
   - 故障转移
   - 全局直连
   include-all: true
-  icon: https://cdn.drugmeta.com/clash/icon/fish.svg
+  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/fish.svg
 rule-providers:
   applications:
     type: http
@@ -386,13 +388,20 @@ rule-providers:
     behavior: domain
     url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt
     path: ./ruleset/gfw.yaml
+  crack:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/shooven/cdn/main/clash/crack.txt
+    path: ./ruleset/gfw.yaml
 rules:
-- RULE-SET,applications,全局直连
 - RULE-SET,chatgpt,节点选择
 - RULE-SET,netflix,节点选择
 - RULE-SET,disneyplus,节点选择
 - RULE-SET,tiktok,节点选择
 - RULE-SET,gfw,节点选择
-- GEOIP,LAN,全局直连,no-resolve
-- GEOIP,CN,全局直连,no-resolve
+- RULE-SET,crack,全局直连
+- GEOIP,LAN,全局直连
+- GEOIP,CN,全局直连
 - MATCH,漏网之鱼
