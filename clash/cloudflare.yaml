@@ -4,8 +4,6 @@ allow-lan: false
 log-level: info
 external-controller: 127.0.0.1:9097
 secret: ''
-unified-delay: true
-global-client-fingerprint: chrome
 tun:
   stack: gvisor
   device: Mihomo
@@ -16,6 +14,8 @@ tun:
   - any:53
   mtu: 1500
   enable: false
+unified-delay: true
+global-client-fingerprint: chrome
 dns:
   enable: true
   listen: 0.0.0.0:1053
