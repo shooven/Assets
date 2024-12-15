@@ -48,55 +48,55 @@ const ruleProviderCommon = {
 };
 // 规则集配置
 const ruleProviders = {
-  "applications": {
+    "applications": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt",
     "path": "./ruleset/applications.yaml"
   },
-	"cncidr": {
+    "cncidr": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt",
     "path": "./ruleset/cncidr.yaml"
   },
-   "direct": {
+    "direct": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
     "path": "./ruleset/direct.yaml"
   },
-  "chatgpt": {
+    "chatgpt": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.list",
     "path": "./ruleset/chatgpt.yaml"
   },
-  "netflix": {
+    "netflix": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list",
     "path": "./ruleset/netflix.yaml"
   },
-  "disneyplus": {
+    "disneyplus": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list",
     "path": "./ruleset/disneyplus.yaml"
   },
-  "tiktok": {
+    "tiktok": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.list",
     "path": "./ruleset/tiktok.yaml"
   },
-  "gfw": {
+    "gfw": {
     ...ruleProviderCommon,
     "behavior": "domain",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt",
     "path": "./ruleset/gfw.yaml"
   },
-	"crack": {
+    "crack": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/shooven/cdn/main/clash/crack.txt",
@@ -106,19 +106,19 @@ const ruleProviders = {
 // 规则
 const rules = [
   // 自定义规则
-	"RULE-SET,applications,全局直连",
-	"RULE-SET,cncidr,全局直连",
-  "RULE-SET,direct,全局直连",
+  "RULE-SET,applications,DIRECT",
+  "RULE-SET,cncidr,DIRECT",
+  "RULE-SET,direct,DIRECT",
   "RULE-SET,chatgpt,节点选择",
   "RULE-SET,netflix,节点选择",
   "RULE-SET,disneyplus,节点选择",
   "RULE-SET,tiktok,节点选择",
   "RULE-SET,gfw,节点选择",
-	"RULE-SET,crack,全局直连",
+  "RULE-SET,crack,DIRECT",
   // 其他规则
-  "GEOIP,LAN,全局直连",
-  "GEOIP,CN,全局直连",
-  "MATCH,漏网之鱼"
+  "GEOIP,LAN,DIRECT",
+  "GEOIP,CN,DIRECT",
+  "MATCH,节点选择"
 ];
 // 代理组通用配置
 const groupBaseOption = {
@@ -135,7 +135,7 @@ function main(config) {
   const proxyCount = config?.proxies?.length ?? 0;
   const proxyProviderCount =
     typeof config?.["proxy-providers"] === "object" ? Object.keys(config["proxy-providers"]).length : 0;
-  if (proxyCount === 0 && proxyProviderCount === 0) {
+    if (proxyCount === 0 && proxyProviderCount === 0) {
     throw new Error("配置文件中未找到任何代理");
   }
 
@@ -156,16 +156,16 @@ function main(config) {
       ...groupBaseOption,
       "name": "延迟选优",
       "type": "url-test",
-			"url": "https://www.gstatic.com/generate_204",
-			"tolerance": 100,
+	  "url": "https://www.gstatic.com/generate_204",
+	  "tolerance": 100,
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/speed.svg"
     },
     {
-    ...groupBaseOption,
+      ...groupBaseOption,
       "name": "故障转移",
       "type": "fallback",
-			"url": "https://www.gstatic.com/generate_204",
+	  "url": "https://www.gstatic.com/generate_204",
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/ambulance.svg"
     },
@@ -173,7 +173,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "ChatGPT",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
+      "proxies": ["节点选择", "延迟选优", "故障转移"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/chatgpt.svg"
     },
@@ -181,7 +181,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Netflix",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
+      "proxies": ["节点选择", "延迟选优", "故障转移"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/netflix.svg"
     },
@@ -189,7 +189,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Disney+",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
+      "proxies": ["节点选择", "延迟选优", "故障转移"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/disneyplus.svg"
     },
@@ -197,26 +197,10 @@ function main(config) {
       ...groupBaseOption,
       "name": "TikTok",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
+      "proxies": ["节点选择", "延迟选优", "故障转移"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/tiktok.svg"
     },
-    {
-      ...groupBaseOption,
-      "name": "全局直连",
-      "type": "select",
-      "proxies": ["DIRECT", "节点选择", "延迟选优", "故障转移"],
-      "include-all": true,
-      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/link.svg"
-    },
-	{
-      ...groupBaseOption,
-      "name": "漏网之鱼",
-      "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移", "全局直连"],
-      "include-all": true,
-      "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/fish.svg"
-    }
   ];
 
   // 覆盖原配置中的规则
