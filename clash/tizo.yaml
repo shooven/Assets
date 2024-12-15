@@ -5,7 +5,8 @@ log-level: info
 external-controller: 127.0.0.1:9097
 secret: ''
 unified-delay: true
-global-client-fingerprint: chrome
+profile:
+  store-selected: true
 tun:
   stack: gvisor
   device: Mihomo
@@ -16,6 +17,7 @@ tun:
   - any:53
   mtu: 1500
   enable: false
+global-client-fingerprint: chrome
 dns:
   enable: true
   listen: 0.0.0.0:1053
@@ -54,8 +56,6 @@ dns:
     geosite:google,youtube,telegram,gfw,geolocation-!cn:
     - https://1.1.1.1/dns-query
     - https://doh.opendns.com/dns-query
-profile:
-  store-selected: true
 proxies:
 - name: CF_V1_www.visa.com_80
   type: vless
@@ -264,9 +264,9 @@ proxy-groups:
   name: ChatGPT
   type: select
   proxies:
-  - 节点选择
   - 延迟选优
   - 故障转移
+  - 节点选择
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/chatgpt.svg
 - interval: 300
@@ -278,9 +278,9 @@ proxy-groups:
   name: Netflix
   type: select
   proxies:
-  - 节点选择
   - 延迟选优
   - 故障转移
+  - 节点选择
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/netflix.svg
 - interval: 300
@@ -292,9 +292,9 @@ proxy-groups:
   name: Disney+
   type: select
   proxies:
-  - 节点选择
   - 延迟选优
   - 故障转移
+  - 节点选择
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/disneyplus.svg
 - interval: 300
@@ -306,9 +306,9 @@ proxy-groups:
   name: TikTok
   type: select
   proxies:
-  - 节点选择
   - 延迟选优
   - 故障转移
+  - 节点选择
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/tiktok.svg
 rule-providers:
