@@ -5,8 +5,6 @@ log-level: info
 external-controller: 127.0.0.1:9097
 secret: ''
 unified-delay: true
-profile:
-  store-selected: true
 global-client-fingerprint: chrome
 tun:
   stack: gvisor
@@ -56,6 +54,8 @@ dns:
     geosite:google,youtube,telegram,gfw,geolocation-!cn:
     - https://1.1.1.1/dns-query
     - https://doh.opendns.com/dns-query
+profile:
+  store-selected: true
 proxies:
 - name: CF_V1_www.visa.com_80
   type: vless
@@ -267,7 +267,6 @@ proxy-groups:
   - 节点选择
   - 延迟选优
   - 故障转移
-  - 全局直连
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/chatgpt.svg
 - interval: 300
@@ -282,7 +281,6 @@ proxy-groups:
   - 节点选择
   - 延迟选优
   - 故障转移
-  - 全局直连
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/netflix.svg
 - interval: 300
@@ -297,7 +295,6 @@ proxy-groups:
   - 节点选择
   - 延迟选优
   - 故障转移
-  - 全局直连
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/disneyplus.svg
 - interval: 300
@@ -312,40 +309,16 @@ proxy-groups:
   - 节点选择
   - 延迟选优
   - 故障转移
-  - 全局直连
   include-all: true
   icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/tiktok.svg
-- interval: 300
-  timeout: 3000
-  url: https://www.google.com/generate_204
-  lazy: true
-  max-failed-times: 3
-  hidden: false
-  name: 全局直连
-  type: select
-  proxies:
-  - DIRECT
-  - 节点选择
-  - 延迟选优
-  - 故障转移
-  include-all: true
-  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/link.svg
-- interval: 300
-  timeout: 3000
-  url: https://www.google.com/generate_204
-  lazy: true
-  max-failed-times: 3
-  hidden: false
-  name: 漏网之鱼
-  type: select
-  proxies:
-  - 节点选择
-  - 延迟选优
-  - 故障转移
-  - 全局直连
-  include-all: true
-  icon: https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/fish.svg
 rule-providers:
+  privtae:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/shooven/cdn/main/clash/privtae.txt
+    path: ./ruleset/privtae.yaml
   applications:
     type: http
     format: yaml
@@ -360,6 +333,13 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt
     path: ./ruleset/cncidr.yaml
+  direct:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
+    path: ./ruleset/direct.yaml
   chatgpt:
     type: http
     format: yaml
@@ -395,22 +375,16 @@ rule-providers:
     behavior: domain
     url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt
     path: ./ruleset/gfw.yaml
-  crack:
-    type: http
-    format: yaml
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/shooven/cdn/main/clash/crack.txt
-    path: ./ruleset/gfw.yaml
 rules:
-- RULE-SET,applications,全局直连
-- RULE-SET,cncidr,全局直连
+- RULE-SET,applications,DIRECT
+- RULE-SET,privtae,DIRECT
+- RULE-SET,cncidr,DIRECT
+- RULE-SET,direct,DIRECT
 - RULE-SET,chatgpt,节点选择
 - RULE-SET,netflix,节点选择
 - RULE-SET,disneyplus,节点选择
 - RULE-SET,tiktok,节点选择
 - RULE-SET,gfw,节点选择
-- RULE-SET,crack,全局直连
-- GEOIP,LAN,全局直连
-- GEOIP,CN,全局直连
-- MATCH,漏网之鱼
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,节点选择
