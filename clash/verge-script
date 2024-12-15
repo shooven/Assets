@@ -48,58 +48,58 @@ const ruleProviderCommon = {
 };
 // 规则集配置
 const ruleProviders = {
-    "applications": {
+  "privtae": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://raw.githubusercontent.com/shooven/cdn/main/clash/privtae.txt",
+    "path": "./ruleset/privtae.yaml"
+  },
+  "applications": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt",
     "path": "./ruleset/applications.yaml"
   },
-    "cncidr": {
+  "cncidr": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt",
     "path": "./ruleset/cncidr.yaml"
   },
-    "direct": {
+  "direct": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
     "path": "./ruleset/direct.yaml"
   },
-    "chatgpt": {
+  "chatgpt": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.list",
     "path": "./ruleset/chatgpt.yaml"
   },
-    "netflix": {
+  "netflix": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list",
     "path": "./ruleset/netflix.yaml"
   },
-    "disneyplus": {
+  "disneyplus": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list",
     "path": "./ruleset/disneyplus.yaml"
   },
-    "tiktok": {
+  "tiktok": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.list",
     "path": "./ruleset/tiktok.yaml"
   },
-    "gfw": {
+  "gfw": {
     ...ruleProviderCommon,
     "behavior": "domain",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt",
-    "path": "./ruleset/gfw.yaml"
-  },
-    "crack": {
-    ...ruleProviderCommon,
-    "behavior": "classical",
-    "url": "https://raw.githubusercontent.com/shooven/cdn/main/clash/crack.txt",
     "path": "./ruleset/gfw.yaml"
   },
 };
@@ -107,6 +107,7 @@ const ruleProviders = {
 const rules = [
   // 自定义规则
   "RULE-SET,applications,DIRECT",
+  "RULE-SET,privtae,DIRECT",
   "RULE-SET,cncidr,DIRECT",
   "RULE-SET,direct,DIRECT",
   "RULE-SET,chatgpt,节点选择",
@@ -114,7 +115,6 @@ const rules = [
   "RULE-SET,disneyplus,节点选择",
   "RULE-SET,tiktok,节点选择",
   "RULE-SET,gfw,节点选择",
-  "RULE-SET,crack,DIRECT",
   // 其他规则
   "GEOIP,LAN,DIRECT",
   "GEOIP,CN,DIRECT",
