@@ -48,17 +48,17 @@ const ruleProviderCommon = {
 };
 // 规则集配置
 const ruleProviders = {
-  "privtae": {
-    ...ruleProviderCommon,
-    "behavior": "classical",
-    "url": "https://raw.githubusercontent.com/shooven/cdn/main/clash/privtae.txt",
-    "path": "./ruleset/privtae.yaml"
-  },
   "applications": {
     ...ruleProviderCommon,
     "behavior": "classical",
     "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt",
     "path": "./ruleset/applications.yaml"
+  },
+  "privtae": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://raw.githubusercontent.com/shooven/cdn/main/clash/privtae.txt",
+    "path": "./ruleset/privtae.yaml"
   },
   "cncidr": {
     ...ruleProviderCommon,
@@ -173,7 +173,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "ChatGPT",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移"],
+      "proxies": ["延迟选优", "故障转移", "节点选择"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/chatgpt.svg"
     },
@@ -181,7 +181,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Netflix",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移"],
+      "proxies": ["延迟选优", "故障转移", "节点选择"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/netflix.svg"
     },
@@ -189,7 +189,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Disney+",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移"],
+      "proxies": ["延迟选优", "故障转移", "节点选择"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/disneyplus.svg"
     },
@@ -197,7 +197,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "TikTok",
       "type": "select",
-      "proxies": ["节点选择", "延迟选优", "故障转移"],
+      "proxies": ["延迟选优", "故障转移", "节点选择"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/shooven/cdn/main/clash/icon/tiktok.svg"
     },
