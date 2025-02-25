@@ -18,3 +18,5 @@ mail.qq.com###folder_personal_td
 mail.qq.com##li#folder_starred_td
 mail.qq.com##.pc-plugin-ad-wrapper
 mail.qq.com##li#folder_morefunction_td
+wx.mail.qq.com##div.frame-sidebar-menu:nth-of-type(3)
+wx.mail.qq.com##.frame-sidebar-menu.sidebar-menu-has-right-btn
