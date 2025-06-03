@@ -27,5 +27,6 @@ bing.com###tobPrompt
 bing.com##.asSectionHeading
 bing.com##.bottom_row.widget.nomvs
 bing.com##ul[aria-label="今日热点"]
+bing.com###id_qrcode_popup_container
 bing.com##ul[aria-label="Trending now"]
 
