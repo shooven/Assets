@@ -21,7 +21,16 @@ mail.qq.com##li#folder_morefunction_td
 wx.mail.qq.com##div.frame-sidebar-menu:nth-of-type(3)
 wx.mail.qq.com##.frame-sidebar-menu.sidebar-menu-has-right-btn
 
+cn.bing.com###id_rh_w
+cn.bing.com###id_qrcode
 cn.bing.com###tobPrompt
+cn.bing.com##.b_clickarea
+cn.bing.com##.asSectionHeading
 cn.bing.com##.hp_trivia_outer.show
 cn.bing.com##.bottom_row.widget.nomvs
 cn.bing.com###id_qrcode_popup_container
+cn.bing.com##ul[aria-label="今日热点"]
+www.bing.com##ul[aria-label="今日热点"]
+cn.bing.com##ul[aria-label="Trending now"]
+www.bing.com##ul[aria-label="Trending now"]
+
