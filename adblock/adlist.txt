@@ -29,4 +29,7 @@ bing.com##.bottom_row.widget.nomvs
 bing.com##ul[aria-label="今日热点"]
 bing.com###id_qrcode_popup_container
 bing.com##ul[aria-label="Trending now"]
+outlook.live.com##.C2IG3.ORnNd.oTkSL.QreOD.phvtt.arc_i
+outlook.live.com##.xKrjQ > div:nth-of-type(1) > div:nth-of-type(5) > .C2IG3.ORnNd.oTkSL.QreOD.phvtt.z6Kje
+
 
