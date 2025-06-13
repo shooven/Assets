@@ -4,8 +4,6 @@
 ! 
 ! -----------------------General advert blocking filters-----------------------!
 ! 
-outlook.live.com##.GssDD
-outlook.live.com##.Soq5F
 mail.qq.com###vipBuyBtn
 mail.qq.com##.recentPanel
 mail.qq.com###folder_tag_td
@@ -29,7 +27,12 @@ bing.com##.bottom_row.widget.nomvs
 bing.com##ul[aria-label="今日热点"]
 bing.com###id_qrcode_popup_container
 bing.com##ul[aria-label="Trending now"]
+outlook.live.com##.GssDD
+outlook.live.com##.Soq5F
 outlook.live.com##.C2IG3.ORnNd.oTkSL.QreOD.phvtt.arc_i
 outlook.live.com##.xKrjQ > div:nth-of-type(1) > div:nth-of-type(5) > .C2IG3.ORnNd.oTkSL.QreOD.phvtt.z6Kje
+
+duckduckgo.com##.O9Ipab51rBntYb0pwOQn.V_kJtMs7Zyzm6ruq8Z3u
+duckduckgo.com##.O9Ipab51rBntYb0pwOQn.NlA6mw4gKSyxk2DUe_96.undefined
 
 
