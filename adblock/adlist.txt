@@ -24,6 +24,7 @@ wx.mail.qq.com##.frame-sidebar-menu.sidebar-menu-has-right-btn
 bing.com###id_rh_w
 bing.com###id_qrcode
 bing.com###tobPrompt
+bing.com###id_mobile
 bing.com##.asSectionHeading
 bing.com##.bottom_row.widget.nomvs
 bing.com##ul[aria-label="今日热点"]
