@@ -1,6 +1,4 @@
 payload:
-  - PROCESS-NAME,OneDrive
-  - PROCESS-NAME,OneDrive.exe
   - PROCESS-NAME,OUTLOOK
   - PROCESS-NAME,OUTLOOK.EXE
 
